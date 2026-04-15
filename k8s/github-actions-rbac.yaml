@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: github-actions
+  namespace: www
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: github-actions
+  namespace: www
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "patch", "update"]
+- apiGroups: [""]
+  resources: ["services", "configmaps"]
+  verbs: ["get", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: github-actions
+  namespace: www
+subjects:
+- kind: ServiceAccount
+  name: github-actions
+  namespace: www
+roleRef:
+  kind: Role
+  name: github-actions
+  apiGroup: rbac.authorization.k8s.io
