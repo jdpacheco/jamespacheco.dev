@@ -31,7 +31,7 @@ The image is tagged with the git commit SHA for traceability.
 ## Infrastructure
 
 This site runs on a self-hosted k3s cluster. See
-[jdpacheco/homelab](https://github.com/jdpacheco/homelab) for the
+[jamespacheco-dev/homelab](https://github.com/jamespacheco-dev/homelab) for the
 infrastructure setup — Traefik ingress, Cloudflare Tunnel, cert-manager,
 and the rest of the stack that makes this work.
 
