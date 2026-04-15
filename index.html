@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James Pacheco</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3a;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --accent: #60a5fa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 640px;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .title {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .intro {
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: border-color 0.15s;
+    }
+
+    .links a:hover {
+      border-color: var(--accent);
+    }
+
+    .stack {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    .stack h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .stack-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .stack-item {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>James Pacheco</h1>
+      <p class="title">Site Reliability Engineer</p>
+    </header>
+
+    <p class="intro">
+      Site Reliability Engineer with 18+ years of experience helping systems
+      be safe and reliable. Focused on reducing high-touch processes and bringing
+      automation and safety where it will help the most.
+    </p>
+
+    <div class="links">
+      <a href="https://github.com/jdpacheco" target="_blank" rel="noopener">
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/james-pacheco-57bb5517/" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
+
+    <div class="stack">
+      <h2>Built With</h2>
+      <div class="stack-items">
+        <span class="stack-item">k3s</span>
+        <span class="stack-item">Arch Linux</span>
+        <span class="stack-item">Traefik</span>
+        <span class="stack-item">Cloudflare Tunnel</span>
+        <span class="stack-item">cert-manager</span>
+        <span class="stack-item">Prometheus</span>
+        <span class="stack-item">Grafana</span>
+        <span class="stack-item">Tailscale</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
