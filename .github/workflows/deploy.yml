@@ -14,11 +14,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Connect to Tailscale
-        uses: tailscale/github-action@v2
+        uses: tailscale/github-action@v4
         with:
           oauth-client-id: ${{ secrets.TAILSCALE_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TAILSCALE_OAUTH_CLIENT_SECRET }}
           tags: tag:ci
+          ping: ${{ vars.REGISTRY_IP }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -29,7 +30,7 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: ${{ vars.REGISTRY }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ vars.REGISTRY_IP }}:${{ vars.REGISTRY_PORT }}/${{ vars.IMAGE_NAME }}:${{ github.sha }}
           outputs: type=registry,registry.insecure=true
 
       - name: Set up kubectl
@@ -43,7 +44,7 @@ jobs:
 
       - name: Deploy
         env:
-          REGISTRY: ${{ vars.REGISTRY }}
+          REGISTRY: ${{ vars.REGISTRY_IP }}:${{ vars.REGISTRY_PORT }}
           IMAGE_NAME: ${{ vars.IMAGE_NAME }}
           IMAGE_TAG: ${{ github.sha }}
           DOMAIN: ${{ vars.DOMAIN }}
