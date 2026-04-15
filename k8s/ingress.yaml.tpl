@@ -7,10 +7,10 @@ spec:
   ingressClassName: traefik
   tls:
   - hosts:
-    - www.jamespacheco.dev
+    - ${DOMAIN}
     secretName: jamespacheco-dev-tls
   rules:
-  - host: www.${DOMAIN}
+  - host: ${DOMAIN}
     http:
       paths:
       - path: /
