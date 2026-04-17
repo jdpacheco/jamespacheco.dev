@@ -59,27 +59,59 @@
       font-size: 1rem;
     }
 
-    .links {
+    .social {
       display: flex;
-      gap: 1rem;
-      margin-bottom: 3rem;
+      gap: 0.75rem;
+      margin-top: 0.6rem;
     }
 
-    .links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
+    .social a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.15s;
+    }
+
+    .social a:hover {
+      color: var(--accent);
+    }
+
+    .projects {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .projects h2 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+    }
+
+    .project-card a {
       color: var(--accent);
       text-decoration: none;
       font-size: 0.9rem;
-      padding: 0.4rem 0.8rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      transition: border-color 0.15s;
+      font-weight: 500;
     }
 
-    .links a:hover {
-      border-color: var(--accent);
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-top: 0.25rem;
+      line-height: 1.5;
     }
 
     .stack {
@@ -115,6 +147,10 @@
     <header>
       <h1>James Pacheco</h1>
       <p class="title">Site Reliability Engineer</p>
+      <nav class="social">
+        <a href="https://github.com/jamespacheco-dev" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/james-pacheco-57bb5517/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
     </header>
 
     <p class="intro">
@@ -123,16 +159,12 @@
       automation and safety where it will help the most.
     </p>
 
-    <div class="links">
-      <a href="https://github.com/jamespacheco-dev" target="_blank" rel="noopener">
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/james-pacheco-57bb5517/" target="_blank" rel="noopener">
-        LinkedIn
-      </a>
-      <a href="https://pico.jamespacheco.dev/" target="_blank" rel="noopener">
-        Pico
-      </a>
+    <div class="projects">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <a href="https://pico.jamespacheco.dev/" target="_blank" rel="noopener">Pico</a>
+        <p>A simple number guessing game centered around feedback on the position of digits.</p>
+      </div>
     </div>
 
     <div class="stack">
