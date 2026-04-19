@@ -164,6 +164,7 @@
       <div class="project-card">
         <a href="https://pico.jamespacheco.dev/" target="_blank" rel="noopener">Pico</a>
         <p>A simple number guessing game centered around feedback on the position of digits.</p>
+        <p><span id="pico-active-games"></span></p>
       </div>
     </div>
 
@@ -183,5 +184,18 @@
       </div>
     </div>
   </div>
+  <script>
+    fetch('https://pico-api.jamespacheco.dev/stats')
+      .then(r => r.json())
+      .then(data => {
+        const el = document.getElementById('pico-active-games');
+        if (el && data.active_games !== undefined) {
+          el.textContent = data.active_games === 1
+            ? '1 active game'
+            : `${data.active_games} active games`;
+        }
+      })
+      .catch(() => {});
+  </script>
 </body>
 </html>
